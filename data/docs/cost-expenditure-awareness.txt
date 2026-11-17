@@ -1,0 +1,9 @@
+Title: Cost: expenditure and usage awareness
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/expenditure-and-usage-awareness.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Understanding your organisation's costs and drivers is critical for managing cost and usage effectively and identifying cost-reduction opportunities.
+
+Establish governance with policies and controls, such as AWS Budgets alerts that notify owners when spending crosses a threshold, and organisational account structures.
+
+Monitor cost and usage with detailed billing data, and attribute costs to workloads, teams or projects using cost allocation tags so each owner can see what they spend.

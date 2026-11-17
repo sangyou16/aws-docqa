@@ -1,0 +1,9 @@
+Title: AWS Well-Architected Framework overview
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The AWS Well-Architected Framework describes key concepts, design principles and architectural best practices for designing and running workloads in the cloud. It helps cloud architects build secure, high-performing, resilient and efficient infrastructure.
+
+The framework is organised into six pillars: operational excellence, security, reliability, performance efficiency, cost optimization and sustainability. Each pillar has design principles and a set of foundational questions used in a Well-Architected review.
+
+A review is not an audit. It is a conversation that helps a team understand the trade-offs of its architecture decisions and identify high-risk issues, which it can then prioritise in an improvement plan. The AWS Well-Architected Tool records reviews and milestones.

@@ -1,0 +1,9 @@
+Title: Reliability: foundations
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/foundations.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Foundational requirements extend beyond a single workload. Before architecting a system, ensure requirements that influence reliability are in place.
+
+Manage service quotas and constraints. Be aware of default quotas, monitor usage against them, and request increases before they become a limit on your workload.
+
+Plan your network topology, including highly available connectivity, non-overlapping private IP address ranges across environments, and hub-and-spoke designs rather than many-to-many mesh connections.

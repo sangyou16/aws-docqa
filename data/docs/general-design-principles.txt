@@ -1,0 +1,9 @@
+Title: General design principles
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/general-design-principles.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Stop guessing your capacity needs. In the cloud you can scale out and in automatically, so you do not need to provision for peak load up front or live with too little capacity.
+
+Test systems at production scale. You can create a production-scale test environment on demand, run the test, and decommission the resources, paying only while the test runs.
+
+Automate with architectural experimentation in mind, allow for evolutionary architectures, drive architectures using data, and improve through game days that simulate events in production.

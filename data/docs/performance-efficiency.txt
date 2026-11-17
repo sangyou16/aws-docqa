@@ -1,0 +1,9 @@
+Title: Performance efficiency pillar
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/performance-efficiency.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The performance efficiency pillar covers the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve.
+
+Design principles include democratising advanced technologies, going global in minutes, using serverless architectures, experimenting more often, and considering mechanical sympathy.
+
+Serverless architectures remove the need to run and maintain physical servers for traditional compute activities. Managed services such as AWS Lambda can lower transactional costs because they operate at cloud scale.

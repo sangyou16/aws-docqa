@@ -1,0 +1,9 @@
+Title: Operational excellence: operate
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/operate.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Successful operation of a workload is measured by achieving business and customer outcomes. Define expected outcomes, determine how success will be measured, and identify metrics.
+
+Utilise workload observability: collect metrics, logs and traces, build dashboards for key indicators, and create alarms that notify the right people when thresholds are breached.
+
+Respond to events with runbooks and playbooks, define escalation paths, and communicate status through dashboards and notifications so stakeholders know what is happening.

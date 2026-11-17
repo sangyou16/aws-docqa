@@ -1,0 +1,9 @@
+Title: Reliability: failure management
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/failure-management.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Failures are a given and everything will eventually fail over time. A reliable workload is designed to be aware of failures as they occur and take action to avoid impact on availability.
+
+Back up data: identify all data that needs backing up, secure and encrypt backups, perform backups automatically, and periodically restore data to verify backup integrity.
+
+Use fault isolation such as multiple Availability Zones to protect the workload, and plan disaster recovery with defined recovery time objective (RTO) and recovery point objective (RPO) targets.

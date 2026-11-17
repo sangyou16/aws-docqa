@@ -1,0 +1,9 @@
+Title: Sustainability pillar
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The sustainability pillar focuses on reducing the environmental impact of running cloud workloads, particularly energy consumption and efficiency across all components of a workload.
+
+Design principles include understanding your impact, establishing sustainability goals, maximising utilisation, anticipating and adopting new more efficient hardware and software offerings, using managed services, and reducing the downstream impact of your cloud workloads.
+
+Sustainability follows a shared responsibility model too: AWS optimises the sustainability of the cloud, such as efficient data centres, while customers optimise sustainability in the cloud through workload design and resource usage.

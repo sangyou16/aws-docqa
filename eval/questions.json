@@ -1,0 +1,17 @@
+[
+  {"question": "What are the six pillars of the framework?", "source": "welcome"},
+  {"question": "Why don't I need to provision for peak load up front?", "source": "general-design-principles"},
+  {"question": "How do I make operations changes small and reversible?", "source": "operational-excellence"},
+  {"question": "Who is responsible for security of the cloud versus in the cloud?", "source": "security"},
+  {"question": "Should a CI pipeline use static access keys or short-lived credentials?", "source": "sec-identity-and-access-management"},
+  {"question": "How should I encrypt data at rest with KMS keys?", "source": "sec-data-protection"},
+  {"question": "Which service records API activity logs for auditing?", "source": "sec-detection"},
+  {"question": "How do we practise responding to a security incident?", "source": "sec-incident-response"},
+  {"question": "What should I do about service quotas before they limit my workload?", "source": "rel-foundations"},
+  {"question": "How should clients retry calls to a failing dependency?", "source": "rel-workload-architecture"},
+  {"question": "How do I verify that my backups can actually be restored?", "source": "rel-failure-management"},
+  {"question": "What are RTO and RPO targets for disaster recovery?", "source": "rel-failure-management"},
+  {"question": "Should I benchmark and load test before choosing a database?", "source": "perf-architecture-selection"},
+  {"question": "How can I get alerted when spending crosses a budget threshold?", "source": "cost-expenditure-awareness"},
+  {"question": "Which pricing model suits interruptible work: Spot or Savings Plans?", "source": "cost-resources"}
+]

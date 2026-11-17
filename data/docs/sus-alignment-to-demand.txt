@@ -1,0 +1,9 @@
+Title: Sustainability: alignment to demand
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/alignment-to-demand.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The way users and applications consume workloads and resources can help you identify improvements that meet sustainability goals.
+
+Scale workload infrastructure dynamically so that provisioned resources match demand, and remove or scale down idle and unused assets.
+
+Optimise geographic placement of workloads for their users, align service levels with business needs, and use buffering or throttling to flatten demand curves.

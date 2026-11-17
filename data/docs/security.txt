@@ -1,0 +1,9 @@
+Title: Security pillar
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The security pillar describes how to take advantage of cloud technologies to protect data, systems and assets in a way that improves your security posture.
+
+Design principles include implementing a strong identity foundation, enabling traceability, applying security at all layers, automating security best practices, protecting data in transit and at rest, keeping people away from data, and preparing for security events.
+
+Security in the cloud follows the shared responsibility model: AWS is responsible for security of the cloud, and the customer is responsible for security in the cloud, such as configuring access and encrypting data.

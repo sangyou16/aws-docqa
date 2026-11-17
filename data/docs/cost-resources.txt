@@ -1,0 +1,9 @@
+Title: Cost: cost-effective resources
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-effective-resources.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Using the appropriate services, resources and configurations for your workloads is key to cost savings.
+
+Right-size resources: select the type, size and number of resources that meet technical requirements at the lowest cost, using metrics from monitoring rather than estimates.
+
+Select the best pricing model for each component, for example On-Demand for spiky workloads, Savings Plans or Reserved Instances for steady usage, and Spot Instances for interruptible work.

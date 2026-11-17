@@ -1,0 +1,9 @@
+Title: Operational excellence pillar
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/operational-excellence.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The operational excellence pillar covers the ability to support development and run workloads effectively, gain insight into their operation, and continuously improve supporting processes and procedures to deliver business value.
+
+Design principles include performing operations as code, making frequent small reversible changes, refining operations procedures frequently, anticipating failure, and learning from all operational failures.
+
+Infrastructure as code lets teams apply the same engineering discipline used for application code to their entire environment, so changes are versioned, reviewed and repeatable rather than manual.

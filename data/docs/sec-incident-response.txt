@@ -1,0 +1,9 @@
+Title: Security: incident response
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/incident-response.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Even with mature preventive and detective controls, organisations should implement mechanisms to respond to and mitigate the potential impact of security incidents.
+
+Prepare by identifying key personnel and external resources, developing incident management plans, and pre-provisioning access so responders can act quickly.
+
+Run simulations, or game days, to practise incident response, and automate containment and recovery capabilities where possible. After an incident, run a post-incident analysis to learn and improve.

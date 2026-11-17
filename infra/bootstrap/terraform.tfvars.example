@@ -1,0 +1,2 @@
+github_repo     = "sangyou16/aws-docqa"
+tf_state_bucket = "yourname-docqa-tfstate"

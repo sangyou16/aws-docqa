@@ -1,0 +1,9 @@
+Title: Security: data protection
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/data-protection.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Before architecting any workload, classify data based on its sensitivity so you can apply appropriate protection controls to each class.
+
+Protect data at rest by enforcing encryption, for example with keys managed in AWS Key Management Service, and control who can use those keys.
+
+Protect data in transit by enforcing encryption with TLS, authenticating network communications, and automating detection of unintended data access.

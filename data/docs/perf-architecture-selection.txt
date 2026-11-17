@@ -1,0 +1,9 @@
+Title: Performance: architecture selection
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/architecture-selection.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The optimal solution for a workload varies, and solutions often combine multiple approaches. Well-architected workloads use multiple solutions and enable different features to improve performance.
+
+Learn about and understand available cloud services and features, and use guidance from your cloud provider or partners to inform architecture decisions.
+
+Choose compute, storage, database and networking options based on data: benchmark and load test candidate options, and factor cost and performance trade-offs into the decision.

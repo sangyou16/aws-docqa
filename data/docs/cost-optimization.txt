@@ -1,0 +1,9 @@
+Title: Cost optimization pillar
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+The cost optimization pillar covers the ability to run systems that deliver business value at the lowest price point.
+
+Design principles include implementing cloud financial management, adopting a consumption model, measuring overall efficiency, stopping spending money on undifferentiated heavy lifting, and analysing and attributing expenditure.
+
+With a consumption model you pay only for the computing resources you consume, and increase or decrease usage depending on business requirements, for example by stopping development environments outside working hours.

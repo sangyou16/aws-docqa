@@ -1,0 +1,9 @@
+Title: Security: identity and access management
+Source: https://docs.aws.amazon.com/wellarchitected/latest/framework/identity-and-access-management.html
+Note: Seed paraphrase written for this project; run scripts/fetch_corpus.py to replace with the page text.
+
+Identity and access management ensures that only authorised and authenticated users and components can access your resources, and only in the ways you intend.
+
+Grant least privilege: give identities only the permissions they need for specific actions on specific resources under specific conditions, and remove permissions that are no longer used.
+
+Prefer temporary credentials over long-term access keys. Workloads should assume IAM roles, and federated identity providers or OpenID Connect can give CI systems short-lived credentials without storing static secrets. Require multi-factor authentication for human users.
