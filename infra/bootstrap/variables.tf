@@ -32,3 +32,17 @@ variable "create_github_oidc_provider" {
   type        = bool
   default     = true
 }
+
+variable "alert_email" {
+  description = "Receives CloudWatch alarm and budget emails. Keep it in terraform.tfvars (gitignored)."
+  type        = string
+  validation {
+    condition     = can(regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", var.alert_email))
+    error_message = "Must be an email address."
+  }
+}
+
+variable "monthly_budget_usd" {
+  type    = number
+  default = 5
+}

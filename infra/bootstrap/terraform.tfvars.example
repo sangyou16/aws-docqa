@@ -1,2 +1,3 @@
 github_repo     = "sangyou16/aws-docqa"
 tf_state_bucket = "yourname-docqa-tfstate"
+alert_email     = "you@example.com"

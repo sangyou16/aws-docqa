@@ -9,3 +9,7 @@ output "function_name" {
 output "lambda_log_group" {
   value = aws_cloudwatch_log_group.lambda.name
 }
+
+output "dashboard_url" {
+  value = "https://${var.region}.console.aws.amazon.com/cloudwatch/home?region=${var.region}#dashboards/dashboard/${aws_cloudwatch_dashboard.main.dashboard_name}"
+}

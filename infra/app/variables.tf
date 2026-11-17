@@ -45,3 +45,9 @@ variable "bedrock_model_id" {
     error_message = "Set bedrock_model_id when enable_bedrock = true."
   }
 }
+
+variable "error_alarm_threshold" {
+  description = "Alarm when Lambda errors + API 5xx in a 5-minute window reach this count."
+  type        = number
+  default     = 1
+}

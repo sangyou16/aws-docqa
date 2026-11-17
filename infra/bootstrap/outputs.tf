@@ -6,3 +6,7 @@ output "deploy_role_arn" {
 output "lambda_boundary_arn" {
   value = aws_iam_policy.lambda_boundary.arn
 }
+
+output "alerts_topic_arn" {
+  value = aws_sns_topic.alerts.arn
+}

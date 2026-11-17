@@ -82,11 +82,25 @@ data "aws_iam_policy_document" "deploy" {
       "arn:aws:logs:${var.region}:${local.account}:log-group:/aws/apigateway/${var.project}-*:*",
     ]
   }
+  # CloudWatch alarms and dashboard named <project>-*
+  statement {
+    sid = "AlarmsAndDashboard"
+    actions = [
+      "cloudwatch:PutMetricAlarm", "cloudwatch:DeleteAlarms", "cloudwatch:TagResource",
+      "cloudwatch:UntagResource", "cloudwatch:ListTagsForResource",
+      "cloudwatch:PutDashboard", "cloudwatch:GetDashboard", "cloudwatch:DeleteDashboards",
+    ]
+    resources = [
+      "arn:aws:cloudwatch:${var.region}:${local.account}:alarm:${var.project}-*",
+      "arn:aws:cloudwatch::${local.account}:dashboard/${var.project}-*",
+    ]
+  }
+
   # Describe calls and API Gateway access-log delivery do not support resource scoping.
   statement {
     sid = "LogsUnscopable"
     actions = [
-      "logs:DescribeLogGroups", "logs:DescribeMetricFilters",
+      "logs:DescribeLogGroups", "logs:DescribeMetricFilters", "cloudwatch:DescribeAlarms",
       "logs:CreateLogDelivery", "logs:GetLogDelivery", "logs:UpdateLogDelivery", "logs:DeleteLogDelivery",
       "logs:ListLogDeliveries", "logs:PutResourcePolicy", "logs:DescribeResourcePolicies",
     ]

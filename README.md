@@ -26,8 +26,8 @@ Two Terraform stacks, both with state in your S3 bucket (`-backend-config` keeps
 
 | Stack | Contains | Applied by |
 |---|---|---|
-| `infra/bootstrap` | GitHub OIDC provider, CI deploy role, Lambda permissions boundary | You, with admin credentials (rarely changes) |
-| `infra/app` | Lambda, API Gateway HTTP API, Lambda execution role, log groups | You the first time, then GitHub Actions |
+| `infra/bootstrap` | GitHub OIDC provider, CI deploy role, Lambda permissions boundary, SNS alert topic + email, USD 5 budget | You, with admin credentials (rarely changes) |
+| `infra/app` | Lambda, API Gateway HTTP API, Lambda execution role, log groups, latency metric filter, error alarm, dashboard | You the first time, then GitHub Actions |
 
 CI can only create Lambda roles that carry the boundary from `infra/bootstrap`, so it cannot grant itself or the function more than "write own logs (+ optional Bedrock invoke)".
 
@@ -36,7 +36,7 @@ export TF_STATE_BUCKET=<your-state-bucket>
 
 # 1. bootstrap (admin credentials)
 cd infra/bootstrap
-cp terraform.tfvars.example terraform.tfvars   # set github_repo and tf_state_bucket
+cp terraform.tfvars.example terraform.tfvars   # set github_repo, tf_state_bucket, alert_email
 terraform init -backend-config="bucket=$TF_STATE_BUCKET"
 terraform apply
 terraform output deploy_role_arn               # -> GitHub variable AWS_DEPLOY_ROLE_ARN
@@ -52,5 +52,29 @@ curl "$(terraform output -raw api_url)health"
 curl -X POST "$(terraform output -raw api_url)search" -H 'content-type: application/json' -d '{"query":"least privilege"}'
 ```
 
-After the first `init` of each stack, record provider hashes for both your machine and CI, then commit the lock files:
-`terraform providers lock -platform=linux_amd64 -platform=darwin_arm64`.
+Provider lock files are committed with hashes for Linux, macOS (Intel and Apple Silicon) and Windows.
+
+## Monitoring
+
+- **Logs**: one JSON line per request in `/aws/lambda/docqa-api` (`request_id`, `endpoint`, `status`, `latency_ms`, `result_count`, `error`); API access logs in `/aws/apigateway/docqa-api`. Both kept 14 days.
+- **Metric filter**: `latency_ms` from those lines becomes the custom metric `DocQA/LatencyMs`.
+- **Alarm** `docqa-errors`: Lambda errors + API Gateway 5xx >= 1 in 5 minutes, emails via the `docqa-alerts` SNS topic (and again when it recovers).
+- **Dashboard** `docqa-overview`: errors, p95 latency (app and API Gateway), request counts. URL: `terraform output dashboard_url` in `infra/app`.
+- **Budget** `docqa-monthly`: emails at 80% of USD 5 actual spend and at 100% forecast. It covers the whole account, not just this project.
+
+The email address lives only in your local `infra/bootstrap/terraform.tfvars` (gitignored); CI never needs it.
+After applying bootstrap, **click the link in the "AWS Notification - Subscription Confirmation" email**, or alarms will not reach you.
+
+Test the alert path without breaking anything (CloudWatch resets the state at the next evaluation):
+
+```bash
+aws cloudwatch set-alarm-state --alarm-name docqa-errors --state-value ALARM --state-reason "manual test" --region ap-southeast-1
+```
+
+Useful Logs Insights query (log group `/aws/lambda/docqa-api`):
+
+```
+fields @timestamp, endpoint, status, latency_ms, result_count, error
+| filter ispresent(latency_ms)
+| stats count(*) as requests, pct(latency_ms, 95) as p95_ms, sum(status >= 500) as errors by endpoint
+```
